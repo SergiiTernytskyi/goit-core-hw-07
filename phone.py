@@ -1,10 +1,12 @@
+import re
 from field import Field
 from errors import PhoneVerificationError
 
 class Phone(Field):
     def __init__(self, value):
-        if len(value) == 10 and value.isdigit():
-            super().__init__(value)
-        else:
-            raise PhoneVerificationError("Phone number is less than 10 symbols")
+        if not re.fullmatch(r'(\+?38)?\d{10}', value):
+            raise PhoneVerificationError(f'Wrong phone number format: {value}')
+        
+        super().__init__(value)
+
             

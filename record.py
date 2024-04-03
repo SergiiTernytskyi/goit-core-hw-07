@@ -1,5 +1,6 @@
 from name import Name
 from phone import Phone
+from birthday import Birthday
 from errors import PhoneFindError
 
 class Record:
@@ -37,6 +38,17 @@ class Record:
         else:
             raise PhoneFindError(f"Phone {user_phone} can`t be find. Looks like it does not exist.")
         
+    def add_birthday(self, value):
+        self.birthday = Birthday(value)
+
+    def __getitem__(self, value):
+        if value == 'name':
+            return self.name
+        if value == 'phones':
+            return self.phones
+        if value == 'birthday':
+            return self.birthday
+        
 
     def __str__(self):
-        return f"Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}"
+        return f"Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}, birthday: {self.birthday.value}"
