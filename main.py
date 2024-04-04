@@ -1,13 +1,13 @@
 from colorama import Fore
-from say_hello import say_hello
-from parse_input import parse_input
+from classes import AddressBook
+from handlers.say_hello import say_hello
+from handlers.parse_input import parse_input
 from handlers.add_contact import add_contact
 from handlers.get_contact import get_contact
 from handlers.add_birthday import add_birthday
 from handlers.show_birthday import show_birthday
-from handlers.get_all_contacts import get_all_contacts
 from handlers.birthdays_list import birthdays_list
-from classes import AddressBook
+from handlers.get_all_contacts import get_all_contacts
 
 def main():
     print(f"{Fore.BLUE}Welcome to the assistant bot! {Fore.RESET}")
