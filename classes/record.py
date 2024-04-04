@@ -1,12 +1,11 @@
-from name import Name
-from phone import Phone
-from birthday import Birthday
-from errors import PhoneFindError
+from classes import Name, Phone, Birthday, PhoneFindError
+
 
 class Record:
     def __init__(self, name):
         self.name = Name(name)
         self.phones = []
+        self.birthday = None
 
 
     def add_phone(self, user_phone):
@@ -51,4 +50,4 @@ class Record:
         
 
     def __str__(self):
-        return f"Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}, birthday: {self.birthday.value}"
+        return f"Contact name: {self.name}, phones: {'; '.join(p.value for p in self.phones)}, birthday: {self.birthday}"

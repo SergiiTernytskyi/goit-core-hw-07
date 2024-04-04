@@ -1,6 +1,6 @@
 from datetime import datetime
-from field import Field
-from errors import BirthdayError
+from classes import Field
+from classes import BirthdayError
 
 
 class Birthday(Field):
@@ -14,3 +14,6 @@ class Birthday(Field):
             raise BirthdayError(f'Birthday date cannot be in a future.')
         
         self.value = birthday.date()
+    
+    def __str__(self):
+        return f'{self.value.strftime('%Y.%m.%d')}'

@@ -1,6 +1,6 @@
 import re
-from field import Field
-from errors import PhoneVerificationError
+from classes import Field
+from classes import PhoneVerificationError
 
 class Phone(Field):
     def __init__(self, value):
@@ -8,5 +8,4 @@ class Phone(Field):
             raise PhoneVerificationError(f'Wrong phone number format: {value}')
         
         super().__init__(value)
-
             
