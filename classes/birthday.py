@@ -16,4 +16,4 @@ class Birthday(Field):
         self.value = birthday.date()
     
     def __str__(self):
-        return f'{self.value.strftime('%Y.%m.%d')}'
+        return f"{self.value.strftime('%Y.%m.%d')}"
